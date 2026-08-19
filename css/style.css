@@ -16,7 +16,6 @@
     --header-height: 76px;
 }
 
-
 /* Reset */
 
 * {
@@ -70,7 +69,6 @@ img {
 .section-soft {
     background: rgba(255, 255, 255, 0.012);
 }
-
 
 /* Header */
 
@@ -190,6 +188,8 @@ img {
     border-radius: 7px;
 
     background: transparent;
+
+    cursor: pointer;
 }
 
 .menu-toggle span {
@@ -202,7 +202,6 @@ img {
 
     background: white;
 }
-
 
 /* Hero */
 
@@ -342,7 +341,6 @@ img {
     box-shadow: 0 0 22px rgba(123, 44, 255, 0.24);
 }
 
-
 /* Foto */
 
 .hero-image-area {
@@ -374,7 +372,6 @@ img {
     border-radius: 7px;
 }
 
-
 /* Títulos */
 
 .section-title {
@@ -399,7 +396,6 @@ img {
 
     letter-spacing: -1px;
 }
-
 
 /* Sobre */
 
@@ -453,7 +449,6 @@ img {
         0 25px 50px rgba(0, 0, 0, 0.35),
         0 0 40px rgba(123, 44, 255, 0.12);
 }
-
 
 /* Habilidades */
 
@@ -532,7 +527,6 @@ img {
     font-size: 0.78rem;
     font-weight: 600;
 }
-
 
 /* O que posso oferecer */
 
@@ -648,7 +642,6 @@ img {
     grid-column: 1 / 2;
 }
 
-
 /* Contato */
 
 .contact-content {
@@ -726,7 +719,6 @@ img {
     box-shadow: 0 10px 25px rgba(123, 44, 255, 0.12);
 }
 
-
 /* Responsividade */
 
 @media (max-width: 1000px) {
@@ -738,9 +730,33 @@ img {
 
 @media (max-width: 900px) {
 
+    .hero-grid,
     .about-grid {
         grid-template-columns: 1fr;
         gap: 45px;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-description {
+        max-width: 650px;
+    }
+
+    .hero-actions,
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-image-area {
+        min-height: auto;
     }
 
     .about-image {
@@ -758,6 +774,94 @@ img {
 
 @media (max-width: 650px) {
 
+    .container {
+        width: 90%;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-content {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 20px;
+
+        padding: 20px;
+
+        background: rgba(8, 9, 13, 0.98);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-content.active {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+    }
+
+    .nav-button {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .hero-grid {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-role {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .portrait-wrapper {
+        width: min(320px, 80vw);
+    }
+
     .certifications-grid,
     .contribution-grid {
         grid-template-columns: 1fr;
@@ -767,11 +871,56 @@ img {
         min-height: auto;
     }
 
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
+
     .about-image img {
         max-width: 100%;
     }
 
     .contribution-card {
         min-height: auto;
+    }
+
+    .contact-content p {
+        font-size: 0.95rem;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .portrait-wrapper {
+        width: 75vw;
+    }
+
+    .section-title h2 {
+        font-size: 1.75rem;
     }
 }
